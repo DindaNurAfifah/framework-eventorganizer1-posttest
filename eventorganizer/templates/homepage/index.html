@@ -1,0 +1,122 @@
+{% extends "homepage/layout.html" %}
+{% load static %}
+{% block title %}Home - Events Co.{% endblock %}
+
+{% block content %}
+    <!-- tab1 -->
+    <header class="hero-section mt-3">
+        <div class="container">
+          <div class="row align-items-center py-5 g-5">
+            <div class="col-12 col-md-6">
+              <div class="text-center text-md-start">
+                <h1 class="display-md-2 display-4 fw-bold text-dark pb-2">
+                  <span class="text-info"> Your Ultimate </span> Event Organizer Partner </h1>
+                <p class="lead">
+                    <span class="text-info fw-bold"> Events Co. </span> <span class="fw-medium"> seamless, memorable events tailored to your vision. 
+                    From corporate to personal, we handle every detail so you can enjoy the moment. </span> 
+                </p>
+                <button class="btn btn-info px-5 py-2 mt-3 fs-5 fw-bold" type="button"> Book Now </button>
+              </div>
+            </div>
+            <div class="col-12 col-md-6">
+              <img src="{% static 'images/two.jpg' %}" class="img-fluid shadow-lg" alt="Dinner Party" />
+            </div>
+          </div>
+        </div>
+    </header>
+
+    <!-- tab2(about) -->
+    <div class="container" id="about-tab">
+      <div class="row align-items-center gx-3 gy-5 py-5 mt-5">
+        <div class="col-12 col-md-12 col-lg-5">
+          <img src="{% static 'images/one.jpg' %}" class="img-fluid mx-auto d-block image-spacing shadow-lg w-75" alt="Wedding" />
+        </div>
+        <div class="col-12 col-md-12 text-lg-start col-lg-7 text-spacing">
+          <h2 class="fw-bold text-info fs-1 pb-3"> About Events Co. </h2>
+          <p class="text-justify fw-bold">
+            <span class="text-info"> Events Co., </span> we are dedicated to transforming your visions into unforgettable 
+            experiences. With a passion for excellence and a commitment to detail, we specialize 
+            in creating bespoke events that cater to your every need. Whether you're planning a 
+            grand corporate event, a charming wedding, or an intimate gathering, our team of 
+            experienced professionals is here to ensure every aspect is flawlessly executed.</p>
+          <p class="text-justify fw-bold">
+            Our mission is to turn your ideas into reality, offering a range of services from event 
+            planning and design to on-the-day coordination. We pride ourselves on our creativity, 
+            efficiency, and personalized approach, ensuring that each event is uniquely tailored 
+            to reflect your style and preferences.</p>
+          <p class="text-justify fw-bold">
+          Let us handle the logistics while you focus on enjoying your event. At Events Co., we 
+          believe that every event should be a celebration, and we’re here to make that happen with 
+          our innovative solutions and dedicated service. </p>
+          <a href="/about"> <button class="btn btn-info px-5 py-32 mt-3 fs-5 fw-bold" type="button"> Read More </button> </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- tab3(service) -->
+    <div class="container my-5" id="service-tab">
+      <div class="row align-items-center justify-content-center gx-3 gy-5 py-5 mt-5">
+        <div class="col-12">
+          <ul class="nav nav-tabs d-flex flx-wrap justify-content-center" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active me-md-3 me-1 text-info" id="all-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true">All</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link me-md-3 me-1 text-info" id="wedding-tab" data-bs-toggle="tab" data-bs-target="#wedding-tab-pane" type="button" role="tab" aria-controls="wedding-tab-pane" aria-selected="false">Wedding</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link me-md-3 me-1 text-info" id="gathering-tab" data-bs-toggle="tab" data-bs-target="#gathering-tab-pane" type="button" role="tab" aria-controls="gathering-tab-pane" aria-selected="false">Gathering</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link me-md-3 me-1 text-info" id="birthday-tab" data-bs-toggle="tab" data-bs-target="#birthday-tab-pane" type="button" role="tab" aria-controls="birthday-tab-pane" aria-selected="false">Birthday</button>
+            </li>
+          </ul>
+
+          <!-- service-all -->
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+              <div class="row g-4 mt-5 justify-content-center align-items-center">
+                <div class="col-12 col-md-4">
+                  <img src="{% static 'images/three.jpg' %}" alt="" class="img-fluid d-block mx-auto shadow-lg" />
+                </div>
+                <div class="col-12 col-md-4">
+                  <img src="{% static 'images/four.jpg' %}" alt="" class="img-fluid d-block mx-auto shadow-lg" />
+                </div>
+                <div class="col-12 col-md-4">
+                  <img src="{% static 'images/five.jpg' %}" alt="" class="img-fluid d-block mx-auto shadow-lg" />
+                </div>
+              </div>
+            </div>
+
+            <!-- service-wedding -->
+            <div class="tab-pane fade" id="wedding-tab-pane" role="tabpanel" aria-labelledby="wedding-tab" tabindex="0">
+                <div class="row mt-5 g-4">
+                  <div class="col-12 col-md-4">
+                    <img src="{% static 'images/four.jpg' %}" alt="" class="img-fluid shadow-lg" />
+                  </div>
+                </div>
+              </div>
+
+            <!-- service-gathering -->
+            <div class="tab-pane fade" id="gathering-tab-pane" role="tabpanel" aria-labelledby="gathering-tab" tabindex="0">
+            <div class="row g-4 mt-5">
+                <div class="col-12 col-md-4">
+                <img src="{% static 'images/three.jpg' %}" alt="" class="img-fluid shadow-lg" />
+                </div>
+            </div>
+            </div>
+
+            <!-- service-birthday -->
+            <div class="tab-pane fade" id="birthday-tab-pane" role="tabpanel" aria-labelledby="birthday-tab" tabindex="0">
+                <div class="row g-4 mt-5">
+                  <div class="col-12 col-md-4">
+                    <img src="{% static 'images/five.jpg' %}" alt="Birthday Event" class="img-fluid d-block mx-auto shadow-lg" />
+                  </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

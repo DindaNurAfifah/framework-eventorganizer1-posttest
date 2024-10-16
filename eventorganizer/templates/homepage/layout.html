@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{% block title %} Events Co. {% endblock %}</title>
     {% load static %}
-    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/jpeg" />
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/jpeg"/>
 </head>
 <body>
     <div class="head-section">
       <nav class="navbar navbar-expand-lg py-3 fixed-top bg-light">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="#">Events Co.</a>
+          <a class="navbar-brand fw-bold" href="/">Events Co.</a>
           <button
             class="navbar-toggler"
             type="button"
@@ -29,13 +29,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item ms-0 ms-md-3">
-                <a class="nav-link fw-bold" aria-current="page" href="/home">Home</a>
+                <a class="nav-link fw-bold" aria-current="page" href="/">Home</a>
               </li>
               <li class="nav-item ms-0 ms-md-3">
-                <a class="nav-link fw-bold" href="#service-tab">Service</a>
+                <a class="nav-link fw-bold" href="{% url 'read_events' %}">Service</a>
               </li>
               <li class="nav-item ms-0 ms-md-3">
-                <a class="nav-link fw-bold" href="#about-tab">About</a>
+                <a class="nav-link fw-bold" href="/about">About</a>
               </li>
             </ul>
           </div>

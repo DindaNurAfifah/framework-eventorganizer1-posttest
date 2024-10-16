@@ -1,0 +1,17 @@
+{% extends 'homepage/layout.html' %}
+
+{% block title %} Add Events {% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="d-flex align-items-center justify-content-between my-4 mt-5">
+        <h1 class="mb-3 mt-5">Add Events</h1>
+    </div>
+
+    <form class="needs-validation" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% include 'events/form.html' %}
+        <button type="submit" class="btn btn-info mt-3 fw-bold">Save</button>
+    </form>
+</div>
+{% endblock %}

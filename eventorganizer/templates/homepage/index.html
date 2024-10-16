@@ -4,7 +4,7 @@
 
 {% block content %}
     <!-- tab1 -->
-    <header class="hero-section mt-3">
+    <header class="hero-section mt-5">
         <div class="container">
           <div class="row align-items-center py-5 g-5">
             <div class="col-12 col-md-6">
@@ -72,50 +72,58 @@
             </li>
           </ul>
 
-          <!-- service-all -->
-          <div class="tab-content" id="myTabContent">
-            <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
+        <!-- service-all -->
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab" tabindex="0">
               <div class="row g-4 mt-5 justify-content-center align-items-center">
-                <div class="col-12 col-md-4">
-                  <img src="{% static 'images/three.jpg' %}" alt="" class="img-fluid d-block mx-auto shadow-lg" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <img src="{% static 'images/four.jpg' %}" alt="" class="img-fluid d-block mx-auto shadow-lg" />
-                </div>
-                <div class="col-12 col-md-4">
-                  <img src="{% static 'images/five.jpg' %}" alt="" class="img-fluid d-block mx-auto shadow-lg" />
-                </div>
+                  {% for event in events %}
+                      <div class="col-12 col-md-4">
+                          <img src="{{ event.image.url }}" alt="{{ event.title }}" class="img-fluid d-block mx-auto shadow-lg" />
+                      </div>
+                  {% endfor %}
               </div>
-            </div>
-
-            <!-- service-wedding -->
-            <div class="tab-pane fade" id="wedding-tab-pane" role="tabpanel" aria-labelledby="wedding-tab" tabindex="0">
-                <div class="row mt-5 g-4">
-                  <div class="col-12 col-md-4">
-                    <img src="{% static 'images/four.jpg' %}" alt="" class="img-fluid shadow-lg" />
-                  </div>
-                </div>
-              </div>
-
-            <!-- service-gathering -->
-            <div class="tab-pane fade" id="gathering-tab-pane" role="tabpanel" aria-labelledby="gathering-tab" tabindex="0">
-            <div class="row g-4 mt-5">
-                <div class="col-12 col-md-4">
-                <img src="{% static 'images/three.jpg' %}" alt="" class="img-fluid shadow-lg" />
-                </div>
-            </div>
-            </div>
-
-            <!-- service-birthday -->
-            <div class="tab-pane fade" id="birthday-tab-pane" role="tabpanel" aria-labelledby="birthday-tab" tabindex="0">
-                <div class="row g-4 mt-5">
-                  <div class="col-12 col-md-4">
-                    <img src="{% static 'images/five.jpg' %}" alt="Birthday Event" class="img-fluid d-block mx-auto shadow-lg" />
-                  </div>
-                </div>
-            </div>
-
           </div>
+
+          <!-- service-wedding -->
+          <div class="tab-pane fade" id="wedding-tab-pane" role="tabpanel" aria-labelledby="wedding-tab" tabindex="0">
+              <div class="row mt-5 g-4">
+                  {% for event in events %}
+                      {% if event.category == 'wedding' %}
+                          <div class="col-12 col-md-4">
+                              <img src="{{ event.image.url }}" alt="{{ event.title }}" class="img-fluid shadow-lg" />
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              </div>
+          </div>
+
+          <!-- service-gathering -->
+          <div class="tab-pane fade" id="gathering-tab-pane" role="tabpanel" aria-labelledby="gathering-tab" tabindex="0">
+              <div class="row g-4 mt-5">
+                  {% for event in events %}
+                      {% if event.category == 'gathering' %}
+                          <div class="col-12 col-md-4">
+                              <img src="{{ event.image.url }}" alt="{{ event.title }}" class="img-fluid shadow-lg" />
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              </div>
+          </div>
+
+          <!-- service-birthday -->
+          <div class="tab-pane fade" id="birthday-tab-pane" role="tabpanel" aria-labelledby="birthday-tab" tabindex="0">
+              <div class="row g-4 mt-5">
+                  {% for event in events %}
+                      {% if event.category == 'birthday' %}
+                          <div class="col-12 col-md-4">
+                              <img src="{{ event.image.url }}" alt="{{ event.title }}" class="img-fluid d-block mx-auto shadow-lg" />
+                          </div>
+                      {% endif %}
+                  {% endfor %}
+              </div>
+          </div>
+        </div>
+
         </div>
       </div>
     </div>

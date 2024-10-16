@@ -1,0 +1,56 @@
+<!-- {% csrf_token %} -->
+
+<!-- Title Field -->
+<div class="mb-3">
+    <label for="id_title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="id_title" name="title" 
+           value="{{ form.title.value|default_if_none:'' }}" required>
+    <div class="invalid-feedback">{{ form.title.errors }}</div>
+</div>
+
+<!-- Description Field -->
+<div class="mb-3">
+    <label for="id_description" class="form-label">Description</label>
+    <input type="text" class="form-control" id="id_description" name="description" 
+           value="{{ form.description.value|default_if_none:'' }}" required>
+    <div class="invalid-feedback">{{ form.description.errors }}</div>
+</div>
+
+<!-- Category Field -->
+<div class="mb-3">
+    <label for="id_category" class="form-label">Category</label>
+    <select class="form-select" id="id_category" name="category" required>
+        <option value="wedding" {% if form.category.value == "wedding" %}selected{% endif %}>Wedding</option>
+        <option value="gathering" {% if form.category.value == "gathering" %}selected{% endif %}>Gathering</option>
+        <option value="birthday" {% if form.category.value == "birthday" %}selected{% endif %}>Birthday</option>
+    </select>
+    <div class="invalid-feedback">{{ form.category.errors }}</div>
+</div>
+
+<!-- Theme Field -->
+<div class="mb-3">
+    <label for="id_theme" class="form-label">Theme</label>
+    <input type="text" class="form-control" id="id_theme" name="theme" 
+           value="{{ form.theme.value|default_if_none:'' }}" required>
+    <div class="invalid-feedback">{{ form.theme.errors }}</div>
+</div>
+
+<!-- Organizer Field -->
+<div class="mb-3">
+    <label for="id_organizer" class="form-label">Organizer</label>
+    <select class="form-select" id="id_organizer" name="organizer" required>
+        {% for organizer in form.organizer.field.queryset %}
+        <option value="{{ organizer.id }}" {% if organizer.id == form.organizer.value %}selected{% endif %}>
+            {{ organizer.name }} - {{ organizer.location }}
+        </option>
+        {% endfor %}
+    </select>
+    <div class="invalid-feedback">{{ form.organizer.errors }}</div>
+</div>
+
+<!-- Image Field -->
+<div class="mb-3">
+    <label for="id_image" class="form-label">Image</label>
+    <input type="file" class="form-control" id="id_image" name="image" accept="image/*">
+    <div class="invalid-feedback">{{ form.image.errors }}</div>
+</div>
